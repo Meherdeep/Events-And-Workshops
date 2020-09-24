@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Agora Video Call Demo</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css'>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="640558789033-b0lt1d361622ltvqd9cov8ebvkvvchd3.apps.googleusercontent.com">
+  <link rel="icon" href="https://agoraio-community.github.io/AgoraWebSDK-NG/img/logo.png" sizes="16x16">
+</head>
+<body>
+<section class="flex flex-col md:flex-row h-screen items-center">
+
+  <div class="bg-blue-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+    <img src="https://www.agora.io/en/wp-content/uploads/2019/12/how-to-get-started-agora-blog-featured-image.jpg" alt="" class="h-screen">
+  </div>
+
+  <div class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+        flex items-center justify-center">
+
+    <div class="w-full h-100">
+
+      <h1 class="text-xl font-bold md:text-2xl">Agora Video Call</h1>
+
+      <h1 class="text-xl font-bold mt-10 text-gray-900">Join Call</h1>
+
+      <form class="mt-6" action="#" >
+        <div>
+          <label class="block text-gray-700">Username</label>
+          <input type="text" name="" id="username" placeholder="John Doe" value="" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none" autofocus autocomplete required>
+        </div>
+
+        <div class="mt-4">
+          <label class="block text-gray-700">Channel Name</label>
+          <input type="text" name="" id="" placeholder="test" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
+                focus:bg-white focus:outline-none" required>
+        </div>
+
+        <button type="submit" class="w-full block bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg
+              px-4 py-3 mt-12" onclick="window.location.href='./callpage.html'">Join Call</button>
+      </form>
+
+      <hr class="my-6 border-gray-300 w-full">
+
+      <div style="display: block; margin-right: auto; margin-left: auto; width: 30%;">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </div>
+      <script>
+        function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+          updateName(profile.getName());
+        }
+        function updateName(name){
+          document.getElementById("username").value = name;
+        }
+      </script>
+    </div>
+  </div>
+
+</section>  
+</body>
+</html>

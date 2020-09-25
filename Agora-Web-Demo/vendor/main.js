@@ -10,6 +10,8 @@ let handleFail = function(err){
 // Queries the container in which the remote feeds belong
 let remoteContainer = document.getElementById("remote-container");
 
+var channelName = localStorage.getItem("channelname");
+
 document.getElementById('disconnect_call').onclick = () =>  {
     disconnectCall();
 }
@@ -17,7 +19,7 @@ document.getElementById('disconnect_call').onclick = () =>  {
 function disconnectCall(){
     client.leave();
     if (client.leave) {
-        window.location.href = './index.html'
+        window.location.href = '../index.html'
     }
 }
 
@@ -84,7 +86,7 @@ client.init("dc96e5c14025414ea38980c9b1b1fbe4", function(){
 });
 
 //Joining the client
-client.join(null, 'test', null, function(uid){
+client.join(null, channelName, null, function(uid){
 
     let localstream = AgoraRTC.createStream({
         streamID : uid,

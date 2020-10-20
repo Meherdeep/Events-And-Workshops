@@ -81,7 +81,7 @@ var stream = AgoraRTC.createStream({
 });
 
 //Initializing client
-client.init("<--- Add Your APP ID Here --->", function(){
+client.init("dc96e5c14025414ea38980c9b1b1fbe4", function(){
     console.log("Initialized successfully!");
 });
 

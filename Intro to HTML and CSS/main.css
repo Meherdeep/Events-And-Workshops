@@ -9,13 +9,16 @@ body{
 }
 
 .vertical-center { 
-    position: relative;
     z-index: 1;
     background-color: white;
     min-width: 180px;
     max-width: 50%;
     margin: 0 auto 100px;
-    padding: 50px;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    padding: 70px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -43,11 +46,7 @@ body{
 @media (max-width: 500px) {
   .vertical-center {
       margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -80%);
-      width: 120px;
-      padding: 40px;
+      width: 110px;
+      padding: 45px;
   }
 }

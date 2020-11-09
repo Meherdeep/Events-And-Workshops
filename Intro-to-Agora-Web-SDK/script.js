@@ -46,6 +46,7 @@ document.getElementById("start").onclick = function () {
         codec: "h264"
     });
 
+
 // Client Setup
 let channelid = document.getElementById("channelName").value;
 let appid = "<----Enter your APP ID here---->";

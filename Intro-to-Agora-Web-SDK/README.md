@@ -8,7 +8,7 @@ This particular folder contains the code for the workshop conducted on November 
 * <strong>main.css</strong> <br>
 Here you will find the CSS styling for the call page
 * <strong>script.js</strong><br>Here you will find the implementation of Agora Web SDK.
-* <strong>Agora Intro to JS.pptx</strong><br>Contains the slides used during the workshop.
+* <strong>Agora Video Calling Demo.pptx</strong><br>Contains the slides used during the workshop.
 
 
 ## Instructions to run

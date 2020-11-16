@@ -2,6 +2,10 @@
 
 This particular folder contains the code for the workshop conducted on November 16th, 2020. This code explains on how to build a video calling application using Agora Web SDK and add some really cool features using the same.
 
+## Deployed version
+
+You can find the deployed version for the same over here: https://events-and-workshops.vercel.app/
+
 ## How the resources work
 
 * <strong>index.html</strong><br>Here you will find the HTML code for the call page

@@ -11,6 +11,8 @@ let handleFail = function(err){
 let remoteContainer = document.getElementById("remote-container");
 var count = 0; // number of remote containers
 
+
+// Reads value from a variable named `channelName` in our local storage 
 var channelName = localStorage.getItem("channelName");
 
 document.getElementById('disconnect_call').onclick = () =>  {
@@ -29,7 +31,8 @@ function disconnectCall(){
     }
 }
 
-var isMuted = false;
+var isMuted = false; //Default state of mic
+
 document.getElementById('mute_mic').onclick = () =>  {
     toggleMic();
 }
@@ -49,7 +52,8 @@ function toggleMic() {
     }
 }
 
-var isCameraOn = true;
+var isCameraOn = true; // Default state of camera
+
 document.getElementById('disable_camera').onclick = () =>  {
     toggleCamera();
 }

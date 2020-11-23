@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Agora Group Calling</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css'>
+        <link rel="stylesheet" href="../style/call.css">
+        <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.1.0.js"></script>
+    </head>
+    <body>
+        <div class="block mx-auto w-48 py-4">
+            <img src="https://www.agora.io/en/wp-content/uploads/2019/06/agoralightblue-1.png" class="h-10">
+        </div>
+        
+        <div id="me"></div>
+        <div id="remote-container"></div>
+
+        <div class="mt-2 flex justify-center">
+            <button id="disable_camera">
+                <div class="rounded-full h-16 w-16 flex items-center justify-center bg-blue-600 mx-10">
+                    <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white">
+                        <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                      </svg>
+                
+                </div>
+            </button>
+            
+            <button id="disconnect_call">
+                <div class="rounded-full h-16 w-16 flex items-center justify-center bg-red-600 mx-10" >
+                    <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        <path d="M16.707 3.293a1 1 0 010 1.414L15.414 6l1.293 1.293a1 1 0 01-1.414 1.414L14 7.414l-1.293 1.293a1 1 0 11-1.414-1.414L12.586 6l-1.293-1.293a1 1 0 011.414-1.414L14 4.586l1.293-1.293a1 1 0 011.414 0z" />
+                      </svg>
+                </div>
+            </button>
+    
+            <button id="mute_mic">
+                <div class="rounded-full h-16 w-16 flex items-center justify-center bg-blue-600 mx-10">
+                    <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white">
+                        <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd" />
+                    </svg>                
+                </div>
+            </button>
+
+            <button id="bg_song">
+                <div class="rounded-full h-16 w-16 flex items-center justify-center bg-blue-600 mx-10">
+                    <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 380" fill="white">
+                        <path d="M222.941,60.444c-58.541-40.891-66.079-54.548-66.879-56.37L156.15,0l-4.215,0.5
+			c-12.646,1.474-17.09,10.16-17.72,15.153v221.19c-9.595-2.377-20.418-2.274-30.807,0.305
+			c-13.679,3.394-25.542,10.72-33.412,20.641c-8.088,10.193-11.041,21.811-8.344,32.629c2.681,17.013,22.659,29.85,46.455,29.85
+			c5.292,0,10.546-0.642,15.637-1.931c22.964-5.716,40.298-22.708,42.43-41.516h0.277l0.587-214.609
+			c11.77,1.169,48.892,9.627,85.747,67.406l6.766,10.617l0.038-12.591C259.601,126.056,259.356,88.472,222.941,60.444z"/>
+                      </svg>
+                
+                </div>
+            </button>
+
+        </div>
+        <script src="../script/main.js" async defer></script>
+    
+    </body>
+</html>

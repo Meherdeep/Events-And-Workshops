@@ -15,61 +15,51 @@ var count = 0; // number of remote containers
 // Reads value from a variable named `channelName` in our local storage 
 var channelName = localStorage.getItem("channelName");
 
-document.getElementById('disconnect_call').onclick = () =>  {
+// <---- Add your code here ----->
+document.getElementById('disconnect_call').onclick = () => {
     disconnectCall();
 }
 
-/**
- * @name disconnectCall
- * @param null
- * @description function to disconnect the call for a local user
- */
-function disconnectCall(){
+function disconnectCall() {
     client.leave();
     if (client.leave) {
-        window.location.href = '../index.html'
+        window.location.href = '../index.html';
     }
 }
 
-var isMuted = false; //Default state of mic
-
-document.getElementById('mute_mic').onclick = () =>  {
+document.getElementById('mute_mic').onclick = () => {
     toggleMic();
 }
 
-/**
- * @name toggleMic
- * @param null
- * @description function to switch between enabling and disabling a microphone
- */
+var isMuted = false;
+
 function toggleMic() {
     if (isMuted) {
         isMuted = false;
-        globalstream.enableAudio();
+        globalstream.muteAudio();
+        console.log('Stream has been muted.');
     } else {
         isMuted = true;
-        globalstream.muteAudio();
+        globalstream.enableAudio();
+        console.log('Stream has been unmuted.');
     }
 }
 
-var isCameraOn = true; // Default state of camera
-
-document.getElementById('disable_camera').onclick = () =>  {
+document.getElementById('disable_camera').onclick = () => {
     toggleCamera();
 }
 
-/**
- * @name toggleCamera
- * @param null
- * @description function to switch between enabling and disabling a camera
- */
+var isCameraOn = true;
+
 function toggleCamera() {
     if (isCameraOn) {
         isCameraOn = false;
         globalstream.muteVideo();
+        console.log('Video has been disabled');
     } else {
         isCameraOn = true;
         globalstream.enableVideo();
+        console.log('Video has been enabled');
     }
 }
 
